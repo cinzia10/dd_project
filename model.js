@@ -1,4 +1,4 @@
-class RACE {
+class Race {
     constructor(index, name, url){
         this.index = index;
         this.name = name;
@@ -6,8 +6,7 @@ class RACE {
     }
 
     static fromDbObj(obj){
-        const race = new RACE(obj.name, obj.url);
-        race.index = obj.index;
+        const race = new Race(obj.index, obj.name, obj.url);
         return race
     }
 }
