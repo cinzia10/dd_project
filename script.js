@@ -4,23 +4,11 @@ let array = [];
 
 
 function initPage(element) {
-    // console.log(element)
-    // console.log(Object.keys(element));
     const temp = Object.values(element)[1]
-    // console.log(temp)
     array = temp.map(obj => Race.fromDbObj(obj));
     console.log(array)
     displayInfo(array)
 }
-
-
-function loadPg() {
-    fetch(BASE_URL)
-        .then(response => response.json())
-        .then(result => initPage(result))
-}
-
-loadPg()
 
 function createCard(element) {
 
@@ -55,8 +43,18 @@ function displayInfo(array) {
 
         const descButton = card.querySelector('.information-btn');
         const divInfo = card.querySelector('.desc-container')
-        descButton.onclick = () => showOrHide(divInfo);
+        descButton.onclick = () => showOrHidePageInformation(divInfo);
 
         container.appendChild(card)
     }
 }
+
+
+function loadPg() {
+    fetch(BASE_URL)
+        .then(response => response.json())
+        .then(result => initPage(result))
+}
+
+loadPg()
+

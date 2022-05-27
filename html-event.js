@@ -16,7 +16,7 @@ function showMenu() {
     closeIcon.style.display = 'none'
   }
 
-  function showOrHide(container) {
+  function showOrHidePageInformation(container) {
     if(container.style.display === 'none')
     {container.style.display = 'block'} else {
       container.style.display = 'none'

@@ -15,8 +15,13 @@ function goToPage(id) {
 }
 
 function initPage(element) {
-  const temp = Object(element)
-    console.log(temp)
+  for (const key in element) {
+    if (Object.hasOwnProperty.call(element, key)) {
+      const value = element[key];
+      console.log(key, value)
+
+    }
+  }
 }
 
 

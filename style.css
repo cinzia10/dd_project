@@ -52,6 +52,13 @@ body {
     padding: 4px;
 }
 
+.mobile-search-btn {
+    background: transparent;
+    border: none;
+    padding: 8px;
+    float: right;
+}
+
 .information-container {
     margin-top: 8px;
 }
