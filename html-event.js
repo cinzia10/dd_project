@@ -15,3 +15,11 @@ function showMenu() {
     const closeIcon = document.getElementById('close-menu-icon')
     closeIcon.style.display = 'none'
   }
+
+  function showOrHide() {
+    const containerDesc = document.querySelector('.desc-container')
+    if(containerDesc.style.display === 'block')
+    {containerDesc.style.display = 'none'} else {
+      containerDesc.style.display = 'block'
+    }
+  }

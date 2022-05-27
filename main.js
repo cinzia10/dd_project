@@ -1,22 +1,23 @@
 
-
-
-
 const BASE_URL = 'https://www.dnd5eapi.co/api';
 
-const array = [];
+let array = [];
+
+const obj = {};
 
 
-function goToPage(index) {
+function goToPage(id) {
   let urlString = "/prova.html"
-  if(index){
+  const index = Object.keys(obj).some(key => key === id);
+  if(id){
     urlString = urlString + '?id=' + index;
   }
   window.location.href = urlString;
 }
 
 function initPage(element) {
-    array = element.map(obj => Race.fromDbObj(obj));
+  const temp = Object(element)
+    console.log(temp)
 }
 
 

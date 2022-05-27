@@ -39,3 +39,42 @@ body {
     width: 100%;
     height: 100%;
 }
+
+
+/*page with information*/
+.navigation-bar{
+    padding: 4px;
+    margin-top: 8px;
+}
+
+.nav-bar-btn{
+    border: solid black 1px;
+    padding: 4px;
+}
+
+.information-container {
+    margin-top: 8px;
+}
+
+.info-card {
+    border: solid black 1px;
+    margin: 8px;
+    background: #9e0b0f;
+}
+
+.name-card{
+    display: inline-block;
+    padding: 16px;
+}
+
+.info-card button{
+    float: right;
+    margin: 12px;
+    border: none;
+    background:transparent;
+}
+
+.desc-container{
+    background: #e7e7db;
+    padding: 8px;
+}

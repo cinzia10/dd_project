@@ -1,4 +1,4 @@
-const BASE_URL = 'https://www.dnd5eapi.co/api/alignments';
+const BASE_URL = 'https://www.dnd5eapi.co/api/races';
 
 let array = [];
 
