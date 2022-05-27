@@ -8,9 +8,8 @@ const obj = {};
 
 function goToPage(id) {
   let urlString = "/prova.html"
-  const index = Object.keys(obj).some(key => key === id);
   if(id){
-    urlString = urlString + '?id=' + index;
+    urlString = urlString + '?id=' + id;
   }
   window.location.href = urlString;
 }

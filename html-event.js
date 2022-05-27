@@ -16,10 +16,9 @@ function showMenu() {
     closeIcon.style.display = 'none'
   }
 
-  function showOrHide() {
-    const containerDesc = document.querySelector('.desc-container')
-    if(containerDesc.style.display === 'block')
-    {containerDesc.style.display = 'none'} else {
-      containerDesc.style.display = 'block'
+  function showOrHide(container) {
+    if(container.style.display === 'none')
+    {container.style.display = 'block'} else {
+      container.style.display = 'none'
     }
   }
