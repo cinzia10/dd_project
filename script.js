@@ -5,7 +5,7 @@ let array = [];
 
 function initPage(element) {
     const temp = Object.values(element)[1]
-    array = temp.map(obj => Race.fromDbObj(obj));
+    array = temp.map(obj => Element.fromDbObj(obj));
     console.log(array)
     displayInfo(array)
 }
@@ -41,6 +41,9 @@ function displayInfo(array) {
         card.classList.add('info-card')
         card.innerHTML = createCard(element)
 
+        const descCard = card.querySelector('.desc-card')
+        descCard.innerHTML = loadInfo(element.url)
+
         const descButton = card.querySelector('.information-btn');
         const divInfo = card.querySelector('.desc-container')
         descButton.onclick = () => showOrHidePageInformation(divInfo);
@@ -54,6 +57,18 @@ function loadPg() {
     fetch(BASE_URL)
         .then(response => response.json())
         .then(result => initPage(result))
+}
+
+function loadInfo (id){
+    fetch('https://www.dnd5eapi.co' + id)
+    .then(response => response.json())
+    .then(result => /*initInfo*/console.log(result))
+}
+
+function initInfo (element){
+    const temp = Object.values(element)
+    array = temp.map(obj => Race.fromDbObj(obj));
+    // console.log(array)
 }
 
 loadPg()
