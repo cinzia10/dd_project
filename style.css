@@ -1,4 +1,3 @@
-/*mobile css*/
 html,
 body {
     padding: 0px;
@@ -7,81 +6,6 @@ body {
     width: 100vw;
 }
 
-.nav-menu {
-    background-image: linear-gradient(90deg, #9e0b0f, #ce1016);
-    ;
-}
-
-/* .nav-menu img{
-    filter: brightness(0) invert(1);
-} */
-
-.mobile-menu-btn {
-    background: transparent;
-    border: none;
-    padding: 8px;
-}
-
-.mobile-menu {
-    position: absolute;
-    overflow: auto;
-    background-color: #e7e7db;
-
-}
-
-
-
-
-/*mobile events style*/
-#mobile-menu-container {
-    display: none;
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-}
-
-
-/*page with information*/
-.navigation-bar{
-    padding: 4px;
-    margin-top: 8px;
-}
-
-.nav-bar-btn{
-    border: solid black 1px;
-    padding: 4px;
-}
-
-.mobile-search-btn {
-    background: transparent;
-    border: none;
-    padding: 8px;
-    float: right;
-}
-
-.information-container {
-    margin-top: 8px;
-}
-
-.info-card {
-    border: solid black 1px;
-    margin: 8px;
-    background: #9e0b0f;
-}
-
-.name-card{
-    display: inline-block;
-    padding: 16px;
-}
-
-.info-card button{
-    float: right;
-    margin: 12px;
-    border: none;
-    background:transparent;
-}
-
-.desc-container{
-    background: #e7e7db;
-    padding: 8px;
+.card{
+    border: solid black 2px;
 }
