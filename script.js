@@ -3,7 +3,7 @@ const BASE_URL = 'https://www.dnd5eapi.co/api/races';
 let array = [];
 
 function goToPage(id) {
-    let urlString = '/prova.html'
+    let urlString = '/race.html'
    console.log(id)
     if (id) {
         urlString = urlString + '?id=' + id
