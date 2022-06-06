@@ -19,11 +19,15 @@ function itpage(obj) {
 function display(array) {
    const container = document.getElementById('container-information') 
    for (const page of array) {
+       console.log(page)
        const div = document.createElement('div')
        div.classList.add('card')
+       const img = document.createElement('img')
+       img.src = './assets/' + page.index + ".png"
+       div.appendChild(img)
        const span = document.createElement('span')
        const node = document.createTextNode(page.name)
-       span.onclick = () => goToPage(page.url)
+       span.onclick = () => goToPage(page.index)
        span.appendChild(node)
        div.appendChild(span)
 
