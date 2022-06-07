@@ -4,17 +4,24 @@ body {
     margin: 0px;
     height: 100%;
     width: 100%;
+    font-family: 'Cinzel', serif;
+    background-size:cover;
 }
 
 .card{
-    border: solid black 2px;
-    height: 100px;
+    margin: 20px;
+    -webkit-border-radius: 60px;
+border-radius: 16px;
+background: #ffffff;
+-webkit-box-shadow: 9px 9px 18px #dbdbdb, -9px -9px 18px #ffffff;
+box-shadow: 9px 9px 18px #dbdbdb, -9px -9px 18px #ffffff;
 }
 
 .card img{ 
     height: 50px;
 }
 .nav-menu{
+    background: #ffffff;
     height: 44px;
     width: 100%;
     border-bottom: tomato solid 6px;
@@ -36,6 +43,6 @@ body {
     background-color: transparent;
     background-image: url('./assets/search_FILL0_wght400_GRAD0_opsz48.png');
     border:  none;
-    height: 16px;
+    height: 48px;
     
 }

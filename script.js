@@ -26,7 +26,7 @@ function display(array) {
 
 
     const title = document.createElement('h1')
-    const textTitle = document.createTextNode(array.name)
+    const textTitle = document.createTextNode(array.name + array.size)
     title.appendChild(textTitle)
     pg.appendChild(title)
     const img = document.createElement('img')
@@ -34,13 +34,13 @@ function display(array) {
        img.classList.add('pg-img')
     pg.appendChild(img)
 
-    const alignment = document.createElement('span')
+    const alignment = document.createElement('p')
     const nodealignment = document.createTextNode(array.alignment)
     alignment.appendChild(nodealignment)
     pg.appendChild(alignment)
     
 
-    const age = document.createElement('span')
+    const age = document.createElement('p')
     const textage = document.createTextNode(array.age)
     age.appendChild(textage)
     pg.appendChild(age)
