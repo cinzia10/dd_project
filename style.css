@@ -44,5 +44,5 @@ box-shadow: 9px 9px 18px #dbdbdb, -9px -9px 18px #ffffff;
     background-image: url('./assets/search_FILL0_wght400_GRAD0_opsz48.png');
     border:  none;
     height: 48px;
-    
+    width: 48px;
 }

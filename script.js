@@ -26,7 +26,7 @@ function display(array) {
 
 
     const title = document.createElement('h1')
-    const textTitle = document.createTextNode(array.name + array.size)
+    const textTitle = document.createTextNode(array.name)
     title.appendChild(textTitle)
     pg.appendChild(title)
     const img = document.createElement('img')
