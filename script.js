@@ -4,11 +4,15 @@ const BASE_URL = 'https://www.dnd5eapi.co/api/races/' + param.id;
 
 let array = [];
 
+
+//// FUNCTION CHE CONTROLLA L'ID DELLA PAGINA
 function parsUrlParams() {
     const urlSerchParams = new URLSearchParams(window.location.search)
      const param = Object.fromEntries(urlSerchParams)
      return param;      
 }
+
+
 
 function displayObject(obj) {
     array = Object(obj);
@@ -17,7 +21,7 @@ function displayObject(obj) {
 
 function display(array) {
     console.log(array);
-    const pg = document.getElementById('continer-pg');
+    const pg = document.getElementById('container-character');
 
 
     const title = document.createElement('h1')
@@ -68,13 +72,13 @@ function display(array) {
 
 
 
-function api() {
+function requestData() {
     fetch(BASE_URL)
     .then(response => response.json())
-    .then(resalt => displayObject(resalt))
+    .then(result => displayObject(result))
 }
 
 
 
 
-api()
+requestData();
