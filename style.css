@@ -7,9 +7,16 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Cinzel", serif;
-  background: url("./assets/sfondo.jpg") no-repeat center center fixed;
-  background-size: cover;
-  background-color: #e5e4d6ea; 
+   
+}
+
+.bg-img{
+    background: url("./assets/sfondo.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.bg-color{
+    background-color: #e5e4d6ea;
 }
 
 .title-races{
