@@ -32,8 +32,7 @@ function display(array) {
        img.classList.add('pg-img')
     pg.appendChild(img)
 
-    // const list = document.createElement('ul')
-    // list.classList.add('list')
+
     const size = document.createElement('p')
     const nodesize = document.createTextNode('Size: ' + array.size + ', ' + array.size_description)
     size.classList.add('list')
@@ -46,18 +45,17 @@ function display(array) {
     const subraces = document.createElement('p')
     const nodesubraces = document.createTextNode('Subraces: ' + array.subraces)
     subraces.classList.add('list')
+    
     size.appendChild(nodesize)
     traits.appendChild(nodeatraits)
     language.appendChild(nodealanguage)
     subraces.appendChild(nodesubraces)
-    // list.appendChild(nodesize)
-    // list.appendChild(nodeatraits)
-    // list.appendChild(nodealanguage)
+
     pg.appendChild(size)
     pg.appendChild(traits)
     pg.appendChild(language)
     pg.appendChild(subraces)
-    // pg.appendChild(list)
+
 
     const alignment = document.createElement('p')
     const nodealignment = document.createTextNode(array.alignment)
