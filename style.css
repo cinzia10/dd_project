@@ -157,11 +157,11 @@ p {
   }
 
   #container-information {
-    margin: 100px auto;
+    margin-top: 100px;
     height: 100%;
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 36px;
     justify-items: center;
   }
