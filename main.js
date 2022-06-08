@@ -17,8 +17,15 @@ function itpage(obj) {
 }
 
 function display(array) {
+    const title = document.createElement('h1')
+    const nodetitle = document.createTextNode('Scegli una razza')
+    title.classList.add('title-races')  
+    
    const container = document.getElementById('container-information') 
+   container.appendChild(title)
+
    for (const page of array) {
+   
        console.log(page)
        const div = document.createElement('div')
        div.classList.add('card')
@@ -30,9 +37,11 @@ function display(array) {
        span.onclick = () => goToPage(page.index)
        span.appendChild(node)
        div.appendChild(span)
-
+       title.appendChild(nodetitle)
+       
        container.appendChild(div)
    }
+   
 }
 
 

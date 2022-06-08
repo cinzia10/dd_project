@@ -6,8 +6,17 @@ body {
     width: 100%;
     font-family: 'Cinzel', serif;
     background-size:cover;
-    background-color: #e5e4d6ea;
+    background-color: #e5e4d6ea; 
     
+}
+
+.title-races{
+    color: white;
+    margin-right: 10px;
+    margin-top: -2px;
+    background-color: rgba(200, 24, 24, 0.744);
+    width: 100%;
+    font-size: medium;
 }
 
 .card{
@@ -70,7 +79,6 @@ h1{
 p{
     margin: 30px;
     text-align: center;
-    /* margin-top: -320px; */
 }
 
 .pg-img{
@@ -83,7 +91,15 @@ p{
     font-size: x-small;
     margin-right: 30px;
     text-align: center;
-    /* margin-top: 750px; */
+}
+
+.back{
+    background-color: transparent;
+    border: none;
+}
+
+.back-svg{
+    margin-right: 30px;
 }
 
 @media (min-width:1025px) { 
@@ -95,7 +111,7 @@ p{
         height: 100%;
         width: 100%;
         font-family: 'Cinzel', serif;
-        background-size:cover;
+        background-size:auto;
         background-color: #e5e4d6ea;
     }
 
@@ -111,19 +127,19 @@ p{
     } */
 
     .nav-menu{
-        grid-area: navmenu;
+        /* grid-area: navmenu;
         grid-column-start: 1;
         grid-column-end: 4 ;
         grid-row-start: 1;
-        grid-row-end: 2;
+        grid-row-end: 2; */
     }
     
     .card{
-        grid-area: card;
+        /* grid-area: card;
         grid-column-start: 1;
         grid-column-end: 2 ;
         grid-row-start: 1;
-        grid-row-end: 2;
+        grid-row-end: 2; */
     }
 
     .search{
@@ -153,17 +169,19 @@ p{
 
     p{
         text-align: left;
+        margin-top: -130px;
     }
 
 
     .list{
-        margin-left: 250px;
+        margin-left: 300px;
         margin-top: -300px;
         margin-bottom: 250px;
-        margin-right: 30px;
+        margin-right: 20px;
         color:rgb(200, 24, 24) ;
         font-size: small;
         text-align: left;
+        padding-bottom: 80px;
     }
     
  }
