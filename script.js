@@ -30,7 +30,7 @@ function display(array) {
     pg.appendChild(title)
     const img = document.createElement('img')
        img.src = './assets/' + array.index + ".png" 
-       img.classList.add('pg-img')
+       img.classList.add('info-img')
     pg.appendChild(img)
 
     const list = document.createElement('ul')

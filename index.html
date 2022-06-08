@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
 
-  <body
-    style="
-      background: url(./assets/sfondo.jpg) no-repeat center center fixed;
-      background-size: cover;
-    "
-  >
-    <nav>
-      <div class="nav-menu">
-        <img class="logo" src="./assets/logo.svg" alt="" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body style=" background: url(./assets/background.jpg) no-repeat center center fixed; background-size: cover;">
+  <nav>
+    <div class="nav-menu">
+      <img class="logo" src="./assets/logo.svg" alt="" />
+      <div class="form-container">
+        <input type="text" placeholder="Search...">
         <button class="search" id="search">
-          <img class="search-svg" src="./assets/search.svg" alt="" />
+          <img src="./assets/search.svg" alt="" />
         </button>
       </div>
-
-      <div class="nav-span">
-        <span>scegli una razza</span>
-      </div>
-    </nav>
-
-    <div id="container-information">
-
-        <img id="top-btn" src="./assets/arrow_circle_up_FILL0_wght400_GRAD0_opsz48.svg" alt="">
     </div>
-  </body>
-  <script src="./main.js"></script>
+
+    <div class="nav-span">
+      <span>choose a race</span>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div id="card-container"></div>
+    <div id="info-container"></div>
+  </div>
+
+  <div id="top-btn" style="display:none;" onclick="() => scrollBackTop()">TOP</div>
+
+</body>
+
+<script src="./main.js"></script>
+
 </html>

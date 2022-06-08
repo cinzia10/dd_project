@@ -24,7 +24,7 @@ function displayObject(obj) {
 
 //// FUNCTION CHE CREA IL TEMPLATE HTML, DOVE ANDRANNO INSERITI I DATI
 function display(array) {
-   const container = document.getElementById('container-information');
+   const container = document.getElementById('card-container');
 
    for (const page of array) {
        
@@ -60,25 +60,28 @@ function requestData() {
     .then(result => displayObject(result))
 }
 
+
+
+
+
+const scrollWindow = document.getElementById('card-container');
+
 const topScroll = document.getElementById("top-btn");
 topScroll.onclick = () => scrollBackTop()
 
 
-// // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+scrollWindow.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 36 || document.documentElement.scrollTop > 36) {
+  if (scrollWindow.scrollTop > 16) {
     topScroll.style.display = "block";
   } else {
     topScroll.style.display = "none";
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
 function scrollBackTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+  scrollWindow.scrollTop = 0;
 }
 
 

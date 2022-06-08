@@ -9,17 +9,16 @@ body {
   font-family: "Cinzel", serif;
 }
 
-
+/*MAIN PAGE*/
 /*NAVIGATION STYLE*/
-nav{
+nav {
   position: fixed;
   top: 0px;
   width: 100%;
 }
-
 .nav-menu {
-  background: #7a5b05af;
-  border-bottom: 2px rgb(200, 24, 24) solid;
+  background: #7a5b05cc;
+  border-bottom: 4px #c81818d9 solid;
   height: 50px;
   width: 100%;
   padding-bottom: 15px;
@@ -28,49 +27,59 @@ nav{
   display: flex;
   justify-content: space-between;
 }
-
 .logo {
   height: inherit;
   padding: 5px;
 }
-
-.search {
+.form-container {
+  display: flex;
+  align-items: center;
+  padding-right: 24px;
+}
+input {
   background-color: #ffffff38;
   border-radius: 16px;
   border: none;
-  height: 48px;
+  height: 36px;
   width: 300px;
-  margin-right: 30px;
-  text-align: right;
-  margin-top: 2px;
 }
-
-.search-svg {
-  height: 40px;
-  padding-right: 10px;
+.search {
+  background-color: transparent;
+  border: none;
 }
-
-.nav-span{
+.nav-span {
   color: white;
-    background-color: rgba(200, 24, 24, 0.744);
-    width: 100%;
-    font-size: medium;
-}
-
-
-/*STYLE HOMEPAGE*/
-#container-information {
-  margin-top: 164px;
-  height: 100%;
+  background-color: #c81818d9;
   width: 100%;
+  font-size: 1.2em;
+  padding: 4px 16px;
+  font-weight: 500;
+}
+/*STYLE HOMEPAGE*/
+.container {
+  padding-top: 111px;
+  position: fixed;
+  height: 100%;
+}
+#card-container {
+  width: calc(100% - 5rem);
+  box-sizing: border-box;
+  transition: 0.15s ease-out;
+  margin-top: 0.5rem;
+  border-radius: var(--border-radius);
+  overflow-y: scroll;
+  max-height: calc(100% - 132px);
+  padding: 0 0 0 0rem;
+  margin-left: 3rem;
+  align-content: baseline;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 36px;
+  gap: 42px;
   justify-items: center;
+  scrollbar-color: #7a5b05cc transparent;
 }
-
 .card {
-  max-width: 350px;
+  max-width: 70%;
   padding: 10px;
   height: auto;
   -webkit-border-radius: 60px;
@@ -81,7 +90,6 @@ nav{
   display: flex;
   flex-direction: column;
 }
-
 .card:hover {
   -webkit-box-shadow: 9px 9px 18px #ffdc7b, -3px -3px 10px #ffdc7b;
   box-shadow: 6px 6px 10px #ffdc7b, -3px -3px 10px #ffdc7b;
@@ -89,18 +97,15 @@ nav{
   color: #5b4b1f;
   cursor: pointer;
 }
-
 .card:active {
   background-color: #ffffff;
   box-shadow: 0 4px rgb(200, 24, 24);
   transform: translateY(6px);
 }
-
 .card img {
   max-width: 100%;
   height: auto;
 }
-
 .card p {
   text-align: center;
   font-size: 2em;
@@ -108,9 +113,21 @@ nav{
 
 
 
-/*STYLE INFORMATION CHARACTER*/
-#container-character{
-  padding: 96px 36px;
+/*INFORMATION PAGE*/
+/* .info-container {
+  background: url(./assets/info-bg.png) no-repeat center;
+  background-size: contain;
+  /* min-height: 90%; */
+  min-width: 90%;
+  position: fixed;
+  bottom: 0px;
+} */
+
+#container-character h1{
+  color: #722020;
+  font-size: 40px;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px #b81a1a;
 }
 
 .list {
@@ -122,17 +139,8 @@ nav{
   font-size: small;
   text-align: left;
 }
-.search {
-  background-color: transparent;
-
-  border: none;
-  margin-right: 30px;
-  margin-top: 2px;
-}
-
-.search-svg {
-  height: 40px;
-  margin-right: -10px;
+.info-img{
+  max-height: 450px;
 }
 
 .list {
@@ -144,16 +152,33 @@ nav{
 }
 
 
-/*SHARED ELEMENT*/
-#top-btn{
+/*SEPARATE ELEMENTS*/
+#top-btn {
+  -webkit-tap-highlight-color: var(--color-transparent);
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  height: 64px;
-  display: none;
+  background: hsla(0, 79%, 44%, 0.822);
+  color: #fff;
+  bottom: 0px;
+  left: 0px;
+  z-index: 2;
+  padding: 2.25rem 2rem 1rem 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-radius: 0 150px 0px 0px;
+  cursor: pointer;
 }
 
+#top-btn:hover {
+  enable-background: new;
+  opacity: 0.6;
+}
+
+
+
+
+
 @media screen and (max-width: 1000px) {
+
   html,
   body {
     height: 100vh;
@@ -162,16 +187,17 @@ nav{
     margin: 0;
   }
 
-  #container-information {
+  /*MAIN PAGE*/
+  #card-container {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: unset;
   }
-
   .card {
-    width: 100%;
+    max-width: 85%;
     padding: 10px;
     height: 80px;
     -webkit-border-radius: 60px;
@@ -182,14 +208,32 @@ nav{
     display: flex;
     flex-direction: row;
   }
-
+  .card p{
+    margin-left: 0.5em;
+    line-height: 16px;
+  }
   .card img {
     max-width: 100%;
     height: auto;
   }
-  
 
-  
+  /*INFORMATION PAGE*/
+
+
+
+
+
+
+  /*SEPARATE ELEMENTS*/
+  #top-btn {
+    bottom: 0px;
+    right: 0px;
+    left: unset;
+    right: 0px;
+    padding: 2.25rem 1rem 1rem 2rem;
+    border-radius: 150px 0px 0px 0px;
+  }
+
+
+
 }
-
-
