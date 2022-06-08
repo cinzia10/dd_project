@@ -3,35 +3,45 @@ const BASE_URL = 'https://www.dnd5eapi.co/api/races';
 let array = [];
 
 function goToPage(id) {
-    let urlString = '/race.html'
+    let urlString = '/race.html';
    console.log(id)
     if (id) {
-        urlString = urlString + '?id=' + id
+        urlString = urlString + '?id=' + id;
     }
-           window.location.href = urlString
+           window.location.href = urlString;
 }
 
 function itpage(obj) {
     array = Object.values(obj)[1];
-    display(array)
+    display(array);
 }
 
 function display(array) {
-   const container = document.getElementById('container-information') 
-   for (const page of array) {
-       console.log(page)
-       const div = document.createElement('div')
-       div.classList.add('card')
-       const img = document.createElement('img')
-       img.src = './assets/' + page.index + ".png"
-       div.appendChild(img)
-       const span = document.createElement('span')
-       const node = document.createTextNode(page.name)
-       span.onclick = () => goToPage(page.index)
-       span.appendChild(node)
-       div.appendChild(span)
+   const container = document.getElementById('container-information');
 
-       container.appendChild(div)
+   for (const page of array) {
+       
+       const div = document.createElement('div');
+       div.onclick = () => goToPage(page.index);
+
+       div.classList.add('card');
+
+       
+
+       const img = document.createElement('img');
+       img.src = './assets/' + page.index + ".png";
+       img.style.display = 'block'
+
+       div.appendChild(img);
+
+       const name = document.createElement('p');
+       const node = document.createTextNode(page.name);
+       
+       name.appendChild(node);
+       div.appendChild(name);
+       
+
+       container.appendChild(div);
    }
 }
 
