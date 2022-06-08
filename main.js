@@ -11,7 +11,7 @@ function goToPage(id) {
            window.location.href = urlString;
 }
 
-function itpage(obj) {
+function displayObject(obj) {
     array = Object.values(obj)[1];
     display(array);
 }
@@ -49,7 +49,7 @@ function display(array) {
 function api() {
     fetch(BASE_URL)
     .then(response => response.json())
-    .then(resalt => itpage(resalt))
+    .then(resalt => displayObject(resalt))
 }
 
 

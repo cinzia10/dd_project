@@ -80,7 +80,6 @@ body {
   box-shadow: 6px 6px 10px #ffdc7b, -3px -3px 10px #ffdc7b;
   background: #b1b09fcf;
   color: #5b4b1f;
-  text-shadow: #8b722e;
 }
 
 .card:active {
@@ -162,7 +161,26 @@ p {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 36px;
-    justify-items: center;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 200px;
+    padding: 10px;
+    height: auto;
+    -webkit-border-radius: 60px;
+    border-radius: 16px;
+    background: #dddcc9ea;
+    -webkit-box-shadow: 9px 9px 18px #8b722e, -3px -3px 10px #8b722e;
+    box-shadow: 6px 6px 10px #8b722e, -3px -3px 10px #8b722e;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card p {
+    text-align: center;
+    font-size: 1.5em;
   }
 }
+
+

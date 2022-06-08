@@ -1,7 +1,5 @@
 const param = parsUrlParams()
 
-
-
 const BASE_URL = 'https://www.dnd5eapi.co/api/races/' + param.id;
 
 let array = [];
@@ -9,11 +7,10 @@ let array = [];
 function parsUrlParams() {
     const urlSerchParams = new URLSearchParams(window.location.search)
      const param = Object.fromEntries(urlSerchParams)
-     return param;  
-    
+     return param;      
 }
 
-function itpage(obj) {
+function displayObject(obj) {
     array = Object(obj);
     display(array)
 }
@@ -74,7 +71,7 @@ function display(array) {
 function api() {
     fetch(BASE_URL)
     .then(response => response.json())
-    .then(resalt => itpage(resalt))
+    .then(resalt => displayObject(resalt))
 }
 
 
