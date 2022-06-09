@@ -1,5 +1,6 @@
 const BASE_URL = "https://www.dnd5eapi.co/api/races";
 
+
 let tempArray = [];
 
 //// FUNCTION CHE REINDERIZZA ALLA PAGINA DELLA CARD SELEZIONATA
@@ -18,6 +19,8 @@ function objToArray(obj) {
     tempArray = Object.values(obj)[1];
     displayMenu(tempArray);
   } else {
+    array = Object(obj);
+    displayInformation(array)
   }
 }
 
@@ -46,6 +49,29 @@ function displayMenu(array) {
   }
 }
 
+function displayMenu(array) {
+  const container = document.getElementById("card-container");
+
+  for (const page of array) {
+    const div = document.createElement("div");
+    div.onclick = () => goToPage(page.index);
+
+    div.classList.add("card");
+
+    const img = document.createElement("img");
+    img.src = "./assets/" + page.index + ".png";
+
+    div.appendChild(img);
+
+    const name = document.createElement("p");
+    const node = document.createTextNode(page.name);
+
+    name.appendChild(node);
+    div.appendChild(name);
+
+    container.appendChild(div);
+  }
+}
 //// FUNCTION CHE RICHIEDE I DATI DA UN DATABASE ESTERNO
 function requestData() {
   fetch(BASE_URL)
