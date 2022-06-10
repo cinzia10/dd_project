@@ -49,29 +49,6 @@ function displayMenu(array) {
   }
 }
 
-function displayMenu(array) {
-  const container = document.getElementById("card-container");
-
-  for (const page of array) {
-    const div = document.createElement("div");
-    div.onclick = () => goToPage(page.index);
-
-    div.classList.add("card");
-
-    const img = document.createElement("img");
-    img.src = "./assets/" + page.index + ".png";
-
-    div.appendChild(img);
-
-    const name = document.createElement("p");
-    const node = document.createTextNode(page.name);
-
-    name.appendChild(node);
-    div.appendChild(name);
-
-    container.appendChild(div);
-  }
-}
 //// FUNCTION CHE RICHIEDE I DATI DA UN DATABASE ESTERNO
 function requestData() {
   fetch(BASE_URL)

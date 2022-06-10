@@ -20,19 +20,23 @@ function displayObject(obj) {
 }
 
 function display(array) {
-    console.log(array);
+    
     const container = document.getElementById('container-character');
 
+    const img = document.createElement('img');
+    img.src = './assets/' + array.index + ".png";
+    img.classList.add('info-img');
+    
+    container.appendChild(img)
+
+
+    const textContainer = document.getElementById('text-container');
 
     const title = document.createElement('h1');
     const textTitle = document.createTextNode('Name: ' + array.name);
     title.appendChild(textTitle);
 
-    const img = document.createElement('img');
-    img.src = './assets/' + array.index + ".png";
-    img.classList.add('info-img');
-
-    container.append(title, img)
+    textContainer.append(title)
 }
 
 

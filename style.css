@@ -142,13 +142,16 @@ input {
   font-size: 40px;
   font-weight: 500;
   text-shadow: 2px 2px 4px #b81a1a;
-  display: inline-block;
+  display: block;
+}
+
+#text-container{
   flex-grow: 1;
 }
 
 .info-img {
-  float: right;
-  min-height: 500px;
+  padding: 52px 16px;
+  max-height: 500px;
 }
 
 td{
