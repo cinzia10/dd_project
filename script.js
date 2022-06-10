@@ -36,7 +36,17 @@ function display(array) {
     const textTitle = document.createTextNode('Name: ' + array.name);
     title.appendChild(textTitle);
 
-    textContainer.append(title)
+    const list = document.createElement('ul');
+
+    for (const trait of array.traits) {
+        const listElement = document.createElement('li');
+        const elementNode = document.createTextNode(trait.name);
+        listElement.appendChild(elementNode);
+        list.appendChild(listElement)
+    }
+    
+
+    textContainer.append(title, list)
 }
 
 

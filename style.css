@@ -205,7 +205,7 @@ td{
   }
 
   .card {
-    max-width: 75vw;
+    min-width: 75vw;
     padding: 10px;
     height: 80px;
     -webkit-border-radius: 60px;
