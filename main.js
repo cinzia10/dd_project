@@ -15,13 +15,8 @@ function goToPage(id) {
 
 //// FUNCTION CHE PRENDE I DATI IN ENTRATA E LI VISUALIZZA SULLO SCHERMO
 function objToArray(obj) {
-  if (Object.entries(obj).length > 1) {
-    tempArray = Object.values(obj)[1];
-    displayMenu(tempArray);
-  } else {
-    array = Object(obj);
-    displayInformation(array)
-  }
+  tempArray = Object.values(obj)[1];
+    displayMenu(tempArray);   
 }
 
 //// FUNCTION CHE CREA IL TEMPLATE HTML, DOVE ANDRANNO INSERITI I DATI

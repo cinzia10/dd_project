@@ -12,6 +12,16 @@ function parsUrlParams() {
     return param;
 }
 
+function createListElement(container, id) {
+    console.log(id)
+    const div = document.createElement('div');
+    const span = document.createElement('span');
+    const node = document.createTextNode('ok' + id)
+    span.appendChild(node);
+    div.appendChild(span);
+    container.appendChild(div)
+}
+
 
 
 function displayObject(obj) {
@@ -36,17 +46,13 @@ function display(array) {
     const textTitle = document.createTextNode('Name: ' + array.name);
     title.appendChild(textTitle);
 
-    const list = document.createElement('ul');
+    const infoContainer = document.createElement('div')
 
-    for (const trait of array.traits) {
-        const listElement = document.createElement('li');
-        const elementNode = document.createTextNode(trait.name);
-        listElement.appendChild(elementNode);
-        list.appendChild(listElement)
-    }
+
+    createListElement(infoContainer,)
     
 
-    textContainer.append(title, list)
+    textContainer.append(title, infoContainer)
 }
 
 
