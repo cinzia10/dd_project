@@ -9,14 +9,12 @@ body {
   font-family: "Cinzel", serif;
 }
 
-/*MAIN PAGE*/
-/*NAVIGATION STYLE*/
+/*NAVBAR STYLE (IMG, INPUT, BUTTON)*/
 nav {
   position: fixed;
   top: 0px;
   width: 100%;
 }
-
 .nav-menu {
   background: #7a5b05cc;
   border-bottom: 4px #c81818d9 solid;
@@ -28,7 +26,6 @@ nav {
   display: flex;
   justify-content: space-between;
 }
-
 .logo {
   height: inherit;
   padding: 5px;
@@ -62,13 +59,17 @@ input {
   font-weight: 500;
 }
 
-/*STYLE HOMEPAGE*/
-.container {
+
+
+
+
+.container { /*PRESENTE IN ENTRAMBI GLI HTML*/
   padding-top: 111px;
   position: fixed;
   height: 100%;
 }
 
+/*MAIN PAGE STYLE (INDEX)*/
 #card-container {
   width: calc(100% - 5rem);
   box-sizing: border-box;
@@ -86,7 +87,6 @@ input {
   justify-items: center;
   scrollbar-color: #7a5b05cc transparent;
 }
-
 .card {
   max-width: 70%;
   padding: 10px;
@@ -99,7 +99,6 @@ input {
   display: flex;
   flex-direction: column;
 }
-
 .card:hover {
   -webkit-box-shadow: 9px 9px 18px #ffdc7b, -3px -3px 10px #ffdc7b;
   box-shadow: 6px 6px 10px #ffdc7b, -3px -3px 10px #ffdc7b;
@@ -107,24 +106,22 @@ input {
   color: #5b4b1f;
   cursor: pointer;
 }
-
 .card:active {
   background-color: #ffffff;
   box-shadow: 0 4px rgb(200, 24, 24);
   transform: translateY(6px);
 }
-
 .card img {
   max-width: 100%;
   height: auto;
 }
-
 .card p {
   text-align: center;
   font-size: 2em;
 }
 
-/*INFORMATION PAGE*/
+
+/*INFORMATION PAGE STYLE*/
 #info-container {
   margin-top: 64px;
   position: fixed;
@@ -148,20 +145,27 @@ input {
 #text-container{
   flex-grow: 1;
 }
+#text-container span{
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+
+#text-container p{
+  font-size: 1.25em;
+  font-weight: 500;
+
+}
 
 .info-img {
   padding: 52px 16px;
   max-height: 500px;
 }
 
-td{
-  border: solid 2px black;
-}
-
 
 
 /*SEPARATE ELEMENTS*/
-#top-btn {
+#top-btn, .btn {
   -webkit-tap-highlight-color: var(--color-transparent);
   position: fixed;
   background: hsla(0, 79%, 44%, 0.822);
@@ -180,6 +184,8 @@ td{
   opacity: 0.6;
 }
 
+
+/*START MEDIA QUERY*/
 @media screen and (max-width: 1200px) {
 
   html,
@@ -239,3 +245,5 @@ td{
     border-radius: 150px 0px 0px 0px;
   }
 }
+
+/*END MEDIA QUERY*/

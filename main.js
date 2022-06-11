@@ -3,9 +3,32 @@ const BASE_URL = "https://www.dnd5eapi.co/api/races";
 
 let tempArray = [];
 
+
+//// FUNCTION CHE CONTROLLA LO SCROLL(IN PX) DELLA PAGINA E CAMBIA LO STYLE DEL BUTTON 
+const topScroll = document.getElementById("top-btn");
+const scrollWindow = document.getElementById("card-container");
+
+scrollWindow.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (scrollWindow.scrollTop > 16) {
+    topScroll.style.display = "block";
+  } else {
+    topScroll.style.display = "none";
+  }
+}
+
+//// FUNCTION CHE RIPORTA LO SCROLL A 0 (INIZIO PAGINA)
+topScroll.onclick = () => scrollBackTop();
+function scrollBackTop() {
+  scrollWindow.scrollTop = 0;
+}
+
 //// FUNCTION CHE REINDERIZZA ALLA PAGINA DELLA CARD SELEZIONATA
 function goToPage(id) {
-  let urlString = "./race.html";
+  let urlString = "/race.html";
   console.log(id);
   if (id) {
     urlString = urlString + "?id=" + id;
@@ -49,27 +72,6 @@ function requestData() {
   fetch(BASE_URL)
     .then((response) => response.json())
     .then((result) => objToArray(result));
-}
-
-const scrollWindow = document.getElementById("card-container");
-
-const topScroll = document.getElementById("top-btn");
-topScroll.onclick = () => scrollBackTop();
-
-scrollWindow.onscroll = function () {
-  scrollFunction();
-};
-
-function scrollFunction() {
-  if (scrollWindow.scrollTop > 16) {
-    topScroll.style.display = "block";
-  } else {
-    topScroll.style.display = "none";
-  }
-}
-
-function scrollBackTop() {
-  scrollWindow.scrollTop = 0;
 }
 
 requestData();

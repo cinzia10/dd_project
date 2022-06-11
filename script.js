@@ -12,31 +12,40 @@ function parsUrlParams() {
     return param;
 }
 
+
+//// FUNCTION CHE CREA UN TAG <p> PER LE PROPRIETA' IL CUI VALORE E' UN ARRAY DI OBJ
 function createListElement(container, id) {
-    console.log(id)
-    const div = document.createElement('div');
-    const span = document.createElement('span');
-    const node = document.createTextNode('ok' + id)
-    span.appendChild(node);
-    div.appendChild(span);
-    container.appendChild(div)
+    //// CHECK CHE LA LENGTH SIA MAGGIORE DI 0
+    if (array[id].length > 0) {
+        const firstNode = id.replace('_', ' ');
+
+        const p = document.createElement('p');
+        let text = firstNode + ': ';
+
+        for (const element of array[id]) {
+            if ((array[id].indexOf(element)) < (array[id].length - 1)) {
+                text = text + element.name + ', '
+            } else {
+                text = text + element.name + '.'
+            }
+        }
+
+        const node = document.createTextNode(text);
+        p.appendChild(node);
+        container.appendChild(p)
+    }
 }
 
 
+//// FUNCTION CHE CREA L'HTML E INSERISCE I DATI
+function displayInfo(array) {
 
-function displayObject(obj) {
-    array = Object(obj);
-    display(array)
-}
-
-function display(array) {
-    
     const container = document.getElementById('container-character');
 
     const img = document.createElement('img');
     img.src = './assets/' + array.index + ".png";
-    img.classList.add('info-img');
-    
+    img.classList.add('list-img');
+
     container.appendChild(img)
 
 
@@ -46,24 +55,59 @@ function display(array) {
     const textTitle = document.createTextNode('Name: ' + array.name);
     title.appendChild(textTitle);
 
-    const infoContainer = document.createElement('div')
+    const span = document.createElement('span');
+    const spanNode = document.createTextNode('');
+
+    const listContainer = document.createElement('div');
+
+    const speedSpan = document.createElement('span');
+    const speedNode = document.createTextNode("Speed " + array.speed + ', ');
+    speedSpan.appendChild(speedNode);
+    listContainer.appendChild(speedSpan);
+
+    for (const ability of array.ability_bonuses) {
+        console.log(ability)
+        const abilitySpan = document.createElement('span');
+        const abilityNode = document.createTextNode(ability.ability_score.name + ' +' + ability.bonus + ', ')
+        abilitySpan.appendChild(abilityNode);
+        listContainer.appendChild(abilitySpan);
+    }
+
+    createListElement(listContainer, "languages");
+    createListElement(listContainer, "traits");
+    createListElement(listContainer, "starting_proficiencies");
+    createListElement(listContainer, "subraces");
 
 
-    createListElement(infoContainer,)
-    
+    const age = document.createElement('p');
+    const ageNode = document.createTextNode('Age: ' + array.age);
+    age.appendChild(ageNode);
 
-    textContainer.append(title, infoContainer)
+    const alignment = document.createElement('p');
+    const alignmentNode = document.createTextNode('Alignment: ' + array.alignment);
+    alignment.appendChild(alignmentNode);
+
+    const size = document.createElement('p');
+    const sizeNode = document.createTextNode('Size: ' + array.size_description);
+    size.appendChild(sizeNode);
+
+    textContainer.append(title, listContainer, age, alignment, size)
 }
 
 
+//// FUNCTION CHE PRENDE I DATI IN ENTRATA E LI VISUALIZZA SULLO SCHERMO
+function objToArray(obj) {
+    array = Object(obj);
+    displayInfo(array)
+}
 
+
+//// FUNCTION CHE MANDA UNA RICHIESTA DI DATI ALL'API
 function requestData() {
     fetch(BASE_URL)
         .then(response => response.json())
-        .then(result => displayObject(result))
+        .then(result => objToArray(result))
 }
-
-
 
 
 requestData();
