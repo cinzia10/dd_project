@@ -28,7 +28,7 @@ function scrollBackTop() {
 
 //// FUNCTION CHE REINDERIZZA ALLA PAGINA DELLA CARD SELEZIONATA
 function goToPage(id) {
-  let urlString = "/race.html";
+  let urlString = "./race.html";
   console.log(id);
   if (id) {
     urlString = urlString + "?id=" + id;
