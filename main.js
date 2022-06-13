@@ -30,13 +30,20 @@ function scrollBackTop() {
 
 
 //// FUNCTION CHE CERCA IL TERMINE INSERITO E RIMANDA ALLA PAGINA
-//// AGGIUNGERE CHE SE NON PRESENTE NON RIMANDA A NIENTE E DA ERRORE
 function search() {
   const input = document.getElementById('search-input');
-  console.log('parola cercata',input.value)
+  console.log('parola cercata', input.value)
   const searchWords = input.value.trim();
   const term = searchWords.replaceAll(' ', '-');
-  goToPage(term);
+  const allTerm = [];
+  for (const element of tempArray) {
+    allTerm.push(element.index)
+  }
+  if (allTerm.includes(term)) {
+    goToPage(term);
+  } else {
+    input.value = '';
+  }
 }
 
 //// FUNCTION CHE REINDERIZZA ALLA PAGINA DELLA CARD SELEZIONATA
