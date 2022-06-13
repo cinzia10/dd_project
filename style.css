@@ -17,6 +17,7 @@ nav {
   width: 100%;
   z-index: 1;
 }
+
 .nav-menu {
   background: #7a5b05cc;
   border-bottom: 4px #c81818d9 solid;
@@ -28,6 +29,7 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+
 .logo {
   height: inherit;
   padding: 5px;
@@ -52,7 +54,7 @@ input {
   color: white;
 }
 
-input:focus{
+input:focus {
   border-color: rgba(255, 220, 123, 0.8);
   -webkit-box-shadow: 9px 9px 18px #bd9f4ef1, -3px -3px 10px #bd9f4ef1;
   box-shadow: 6px 6px 10px #bd9f4ef1, -3px -3px 10px #bd9f4ef1;
@@ -71,10 +73,11 @@ input:focus{
   width: 36px;
 }
 
-.search img{
+.search img {
   filter: brightness(0) invert(1);
 }
-.search:hover{
+
+.search:hover {
   cursor: pointer;
 }
 
@@ -91,7 +94,8 @@ input:focus{
 
 
 
-.container { /*PRESENTE IN ENTRAMBI GLI HTML*/
+.container {
+  /*PRESENTE IN ENTRAMBI GLI HTML*/
   padding-top: 111px;
   position: fixed;
   height: 100%;
@@ -106,7 +110,7 @@ input:focus{
   border-radius: var(--border-radius);
   overflow-y: scroll;
   max-height: calc(100% - 132px);
-  padding: 0 0 0 0rem;
+  padding: 0 1rem 4rem 0rem;
   margin-left: 3rem;
   align-content: baseline;
   display: grid;
@@ -115,6 +119,7 @@ input:focus{
   justify-items: center;
   scrollbar-color: #7a5b05cc transparent;
 }
+
 .card {
   max-width: 70%;
   padding: 10px;
@@ -127,6 +132,7 @@ input:focus{
   display: flex;
   flex-direction: column;
 }
+
 .card:hover {
   -webkit-box-shadow: 9px 9px 18px #ffdc7b, -3px -3px 10px #ffdc7b;
   box-shadow: 6px 6px 10px #ffdc7b, -3px -3px 10px #ffdc7b;
@@ -134,15 +140,18 @@ input:focus{
   color: #5b4b1f;
   cursor: pointer;
 }
+
 .card:active {
   background-color: #ffffff;
   box-shadow: 0 4px rgb(200, 24, 24);
   transform: translateY(6px);
 }
+
 .card img {
   max-width: 100%;
   height: auto;
 }
+
 .card p {
   text-align: center;
   font-size: 2em;
@@ -150,50 +159,50 @@ input:focus{
 
 
 /*INFORMATION PAGE STYLE*/
-#info-container {
-  margin-top: 64px;
+.submenu {
+  padding-top: 111px;
   position: fixed;
   height: 100%;
-  width: 100%
 }
 
-#container-character{
-  padding: 0px 28px;
-  display: flex;
+#info-container {
+  width: calc(100% - 5rem);
+  box-sizing: border-box;
+  transition: 0.15s ease-out;
+  margin-top: 0.5rem;
+  border-radius: var(--border-radius);
+  max-height: calc(100% - 132px);
+  padding: 0 1rem 4rem 0rem;
+  margin-left: 2rem;
+  align-content: baseline;
+  scrollbar-color: #7a5b05cc transparent;
 }
-#container-character h1 {
+
+#info-container h1 {
   border-bottom: #722020 solid 4px;
   color: #722020;
   font-size: 40px;
   font-weight: 500;
   text-shadow: 2px 2px 4px #b81a1a;
-  display: block;
 }
 
-#text-container{
-  flex-grow: 1;
-}
-#text-container span{
-  font-size: 1.2em;
-  font-weight: 400;
-}
-
-
-#text-container p{
+#info-container p {
   font-size: 1.25em;
   font-weight: 500;
 
 }
 
-.info-img {
-  padding: 52px 16px;
-  max-height: 500px;
+#info-container img {
+  max-width: 500px;
+  height: auto;
+  float: right;
 }
 
 
 
 /*SEPARATE ELEMENTS*/
-#top-btn, .btn {
+#top-btn,
+.btn {
   -webkit-tap-highlight-color: var(--color-transparent);
   position: fixed;
   background: hsla(0, 79%, 44%, 0.822);
@@ -208,7 +217,7 @@ input:focus{
   cursor: pointer;
 }
 
-#top-btn:hover {
+#top-btn:hover, .btn:hover {
   opacity: 0.6;
 }
 
@@ -236,6 +245,8 @@ input:focus{
     flex-direction: column;
     align-items: center;
     margin-left: unset;
+    padding: 0 1rem 4rem 0rem;
+
   }
 
   .card {
@@ -261,10 +272,48 @@ input:focus{
     height: auto;
   }
 
-  /*INFORMATION PAGE*/
+  *INFORMATION PAGE STYLE*/ .submenu {
+    height: 100vh;
+    width: 100vw;
+    padding-left: 2em;
+    padding-bottom: 2em;
+  }
+
+  #info-container {
+    width: calc(100% - 6rem);
+    box-sizing: border-box;
+    transition: 0.15s ease-out;
+    margin-top: 0.5rem;
+    border-radius: var(--border-radius);
+    overflow-y: scroll;
+    max-height: calc(100% - 132px);
+    padding: 0 1rem 4rem 0rem;
+    margin-left: 2rem;
+    align-content: baseline;
+    scrollbar-color: #7a5b05cc transparent;
+  }
+
+  #info-container h1 {
+    border-bottom: #722020 solid 4px;
+    color: #722020;
+    font-size: 40px;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px #b81a1a;
+  }
+
+  #info-container p {
+    font-size: 1.25em;
+    font-weight: 500;
+  }
+
+  #info-container img {
+    max-width: 500px;
+    height: auto;
+    float: right;
+  }
 
   /*SEPARATE ELEMENTS*/
-  #top-btn {
+  #top-btn, .btn{
     bottom: 0px;
     right: 0px;
     left: unset;

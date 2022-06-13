@@ -59,7 +59,7 @@ function goToPage(id) {
 //// FUNCTION CHE PRENDE I DATI IN ENTRATA E LI VISUALIZZA SULLO SCHERMO
 function objToArray(obj) {
   tempArray = Object.values(obj)[1];
-    displayMenu(tempArray);   
+  displayMenu(tempArray);
 }
 
 //// FUNCTION CHE CREA IL TEMPLATE HTML, DOVE ANDRANNO INSERITI I DATI
