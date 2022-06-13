@@ -93,24 +93,28 @@ input {
   height: auto;
   -webkit-border-radius: 60px;
   border-radius: 16px;
-  background: #dddcc9ea;
+  background: #d2d1b9da;
   -webkit-box-shadow: 9px 9px 18px #8b722e, -3px -3px 10px #8b722e;
   box-shadow: 6px 6px 10px #8b722e, -3px -3px 10px #8b722e;
   display: flex;
   flex-direction: column;
 }
 .card:hover {
-  -webkit-box-shadow: 9px 9px 18px #ffdc7b, -3px -3px 10px #ffdc7b;
-  box-shadow: 6px 6px 10px #ffdc7b, -3px -3px 10px #ffdc7b;
-  background: #b1b09fcf;
-  color: #5b4b1f;
+  -webkit-box-shadow: 6px 6px 12px #cf04044a, -2px -2px 12px #cf04044a;
+  box-shadow: 3px 3px 12px #cf04044a, -2px -2px 12px #cf04044a;
+  background: #f8f7e5;
+  color: #cf0404;
   cursor: pointer;
 }
+
 .card:active {
-  background-color: #ffffff;
-  box-shadow: 0 4px rgb(200, 24, 24);
+  background-color: #f8f7e5;
+  box-shadow: 0 4px rgb(207, 2, 2);
   transform: translateY(6px);
 }
+
+
+
 .card img {
   max-width: 100%;
   height: auto;
