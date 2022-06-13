@@ -26,6 +26,19 @@ function scrollBackTop() {
   scrollWindow.scrollTop = 0;
 }
 
+
+
+
+//// FUNCTION CHE CERCA IL TERMINE INSERITO E RIMANDA ALLA PAGINA
+//// AGGIUNGERE CHE SE NON PRESENTE NON RIMANDA A NIENTE E DA ERRORE
+function search() {
+  const input = document.getElementById('search-input');
+  console.log('parola cercata',input.value)
+  const searchWords = input.value.trim();
+  const term = searchWords.replaceAll(' ', '-');
+  goToPage(term);
+}
+
 //// FUNCTION CHE REINDERIZZA ALLA PAGINA DELLA CARD SELEZIONATA
 function goToPage(id) {
   let urlString = "./race.html";
@@ -58,7 +71,7 @@ function displayMenu(array) {
     div.appendChild(img);
 
     const name = document.createElement("p");
-    const node = document.createTextNode(page.name);
+    const node = document.createTextNode(page.name.replace('-', ' '));
 
     name.appendChild(node);
     div.appendChild(name);

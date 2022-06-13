@@ -7,6 +7,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Cinzel", serif;
+  z-index: 0;
 }
 
 /*NAVBAR STYLE (IMG, INPUT, BUTTON)*/
@@ -14,6 +15,7 @@ nav {
   position: fixed;
   top: 0px;
   width: 100%;
+  z-index: 1;
 }
 .nav-menu {
   background: #7a5b05cc;
@@ -33,8 +35,11 @@ nav {
 
 .form-container {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  padding-right: 24px;
+  width: 100%;
+  margin-right: 80px;
+  z-index: 2;
 }
 
 input {
@@ -42,12 +47,35 @@ input {
   border-radius: 16px;
   border: none;
   height: 36px;
-  width: 300px;
+  width: 240px;
+  padding-left: 16px;
+  color: white;
+}
+
+input:focus{
+  border-color: rgba(255, 220, 123, 0.8);
+  -webkit-box-shadow: 9px 9px 18px #bd9f4ef1, -3px -3px 10px #bd9f4ef1;
+  box-shadow: 6px 6px 10px #bd9f4ef1, -3px -3px 10px #bd9f4ef1;
+  background-color: #b1b09fcf;
+  outline: 0 none;
+  caret-color: #473606;
+  color: #473606;
+  font-weight: bold;
 }
 
 .search {
   background-color: transparent;
+  background-image: url('./assets/search.svg');
+  background-repeat: no-repeat;
+  background-position: center;
   border: none;
+  margin-left: -40px;
+  height: 36px;
+  width: 36px;
+}
+
+.search:hover{
+  cursor: pointer;
 }
 
 .nav-span {
@@ -93,28 +121,24 @@ input {
   height: auto;
   -webkit-border-radius: 60px;
   border-radius: 16px;
-  background: #d2d1b9da;
+  background: #dddcc9ea;
   -webkit-box-shadow: 9px 9px 18px #8b722e, -3px -3px 10px #8b722e;
   box-shadow: 6px 6px 10px #8b722e, -3px -3px 10px #8b722e;
   display: flex;
   flex-direction: column;
 }
 .card:hover {
-  -webkit-box-shadow: 6px 6px 12px #cf04044a, -2px -2px 12px #cf04044a;
-  box-shadow: 3px 3px 12px #cf04044a, -2px -2px 12px #cf04044a;
-  background: #f8f7e5;
-  color: #cf0404;
+  -webkit-box-shadow: 9px 9px 18px #ffdc7b, -3px -3px 10px #ffdc7b;
+  box-shadow: 6px 6px 10px #ffdc7b, -3px -3px 10px #ffdc7b;
+  background: #b1b09fcf;
+  color: #5b4b1f;
   cursor: pointer;
 }
-
 .card:active {
-  background-color: #f8f7e5;
-  box-shadow: 0 4px rgb(207, 2, 2);
+  background-color: #ffffff;
+  box-shadow: 0 4px rgb(200, 24, 24);
   transform: translateY(6px);
 }
-
-
-
 .card img {
   max-width: 100%;
   height: auto;
@@ -215,7 +239,7 @@ input {
   }
 
   .card {
-    min-width: 75vw;
+    min-width: 70vw;
     padding: 10px;
     height: 80px;
     -webkit-border-radius: 60px;
@@ -228,8 +252,8 @@ input {
   }
 
   .card p {
-    margin-left: 0.5em;
-    line-height: 16px;
+    font-size: 20px;
+    padding-top: 8px;
   }
 
   .card img {
