@@ -263,7 +263,7 @@ input:focus {
 
   }
 
-  .card {
+  /* .card {
     min-width: 70vw;
     padding: 10px;
     height: 80px;
@@ -274,7 +274,7 @@ input:focus {
     box-shadow: 6px 6px 10px #8b722e, -3px -3px 10px #8b722e;
     display: flex;
     flex-direction: row;
-  }
+  } */
 
   .card p {
     font-size: 20px;
