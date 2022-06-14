@@ -81,7 +81,7 @@ function displayInfo(array) {
      const sizeNode = document.createTextNode('Size: ' + array.size_description);
      size.appendChild(sizeNode);
 
-    container.append(title, img, listContainer, age, alignment, size);    
+    container.append(title, listContainer, img, age, alignment, size);    
 }
 
 
