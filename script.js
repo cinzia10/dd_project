@@ -5,7 +5,7 @@ const BASE_URL = 'https://www.dnd5eapi.co/api/races/' + param.id;
 let array = [];
 
 
-//// FUNCTION CHE CONTROLLA L'ID DELLA PAGINA
+/// FUNCTION CHE CONTROLLA L'ID DELLA PAGINA
 function parsUrlParams() {
     const urlSerchParams = new URLSearchParams(window.location.search)
     const param = Object.fromEntries(urlSerchParams)
@@ -13,9 +13,9 @@ function parsUrlParams() {
 }
 
 
-//// FUNCTION CHE CREA UN TAG <p> PER LE PROPRIETA' IL CUI VALORE E' UN ARRAY DI OBJ
+/// FUNCTION CHE CREA UN TAG <p> PER LE PROPRIETA' IL CUI VALORE E' UN ARRAY DI OBJ
 function createListElement(container, id) {
-    //// CHECK CHE LA LENGTH SIA MAGGIORE DI 0
+    /// CHECK CHE LA LENGTH SIA MAGGIORE DI 0
     if (array[id].length > 0) {
         const firstNode = id.replace('_', ' ');
 
@@ -37,19 +37,24 @@ function createListElement(container, id) {
 }
 
 
-//// FUNCTION CHE CREA L'HTML E INSERISCE I DATI
-function displayInfo(array) {
+/// FUNCTION CHE CREA L'HTML E INSERISCE I DATI
+function goHome() {
+    window.location.href = "./index.html";
+}
+function displayInfo(array) { 
+
+    
 
     const container = document.getElementById("info-container");
-    //// TITOLO
+    /// TITOLO
     const title = document.createElement('h1');
     const textTitle = document.createTextNode('Name: ' + array.name.replace('-', ' '));
     title.appendChild(textTitle);
-    //// IMMAGINE
+    /// IMMAGINE
     const img = document.createElement('img');
     img.src = './assets/' + array.index + ".png";
     img.classList.add('list-img');
-     //// ELENCO
+     /// ELENCO
      const listContainer = document.createElement('div');
      const speedSpan = document.createElement('span');
      const speedNode = document.createTextNode("Speed " + array.speed + ', ');
@@ -85,14 +90,14 @@ function displayInfo(array) {
 }
 
 
-//// FUNCTION CHE PRENDE I DATI IN ENTRATA E LI VISUALIZZA SULLO SCHERMO
+/// FUNCTION CHE PRENDE I DATI IN ENTRATA E LI VISUALIZZA SULLO SCHERMO
 function objToArray(obj) {
     array = Object(obj);
     displayInfo(array)
 }
 
 
-//// FUNCTION CHE MANDA UNA RICHIESTA DI DATI ALL'API
+/// FUNCTION CHE MANDA UNA RICHIESTA DI DATI ALL'API
 function requestData() {
     fetch(BASE_URL)
         .then(response => response.json())

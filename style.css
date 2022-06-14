@@ -49,6 +49,7 @@ nav {
   width: 100%;
   margin-right: 80px;
   z-index: 2;
+  position: relative;
 }
 
 input {
@@ -86,6 +87,31 @@ input:focus {
 
 .search:hover {
   cursor: pointer;
+}
+
+.search-result{
+    position: absolute;
+    width: 240px;
+    height: fit-content;
+    background-color: rgb(255, 247, 212);
+    top: 100%;
+    right: -3px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* label{display: none;} */
+
+
+
+
+.search-result-button{
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 4px;
 }
 
 .nav-span {
@@ -156,7 +182,8 @@ input:focus {
 
 .card img {
   max-width: 100%;
-  height: auto;
+  height: auto; 
+  width: 700px;
 }
 
 .card p {
@@ -263,7 +290,7 @@ input:focus {
 
   }
 
-  .card {
+  /* .card {
     min-width: 70vw;
     padding: 10px;
     height: 80px;
@@ -274,7 +301,7 @@ input:focus {
     box-shadow: 6px 6px 10px #8b722e, -3px -3px 10px #8b722e;
     display: flex;
     flex-direction: row;
-  }
+  } */
 
   .card p {
     font-size: 20px;

@@ -16,9 +16,13 @@
       <img class="logo" id="desktop-logo" src="./assets/logo_desktop.svg" alt="" />
       <img class="logo" id="mobile-logo" src="./assets/logo-mobile.png" alt="" />
       <div class="form-container">
-        <input id="search-input" type="search" placeholder="Search...">
-        <button class="search" id="search" onclick="search()"> <img src="./assets/search.svg" alt=""></button>
+          <input id="search-input" type="search" placeholder="Search..." onkeyup="checkRacesText()">
+          <button class="search" id="search" onclick="search()"> <img src="./assets/search.svg" alt=""></button>
+          <div id="search-result" class="search-result"></div>
+         
       </div>
+
+      
     </div>
 
     <div class="nav-span">
@@ -34,6 +38,7 @@
 
 </body>
 
+<script src="./racestTextContent.js"></script>
 <script src="./main.js"></script>
 
 </html>
