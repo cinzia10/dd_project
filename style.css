@@ -10,6 +10,13 @@ body {
   z-index: 0;
 }
 
+#mobile-logo{
+  display: none;
+}
+#desktop-logo{
+  display: inline-block;
+}
+
 /*NAVBAR STYLE (IMG, INPUT, BUTTON)*/
 nav {
   position: fixed;
@@ -231,6 +238,13 @@ input:focus {
     width: 100vw;
     padding: 0;
     margin: 0;
+  }
+
+  #mobile-logo{
+    display: inline-block;
+  }
+  #desktop-logo{
+    display: none;
   }
 
   /*MAIN PAGE*/
