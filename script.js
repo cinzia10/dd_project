@@ -38,7 +38,12 @@ function createListElement(container, id) {
 
 
 /// FUNCTION CHE CREA L'HTML E INSERISCE I DATI
-function displayInfo(array) {
+function goHome() {
+    window.location.href = "./index.html";
+}
+function displayInfo(array) { 
+
+    
 
     const container = document.getElementById("info-container");
     /// TITOLO
