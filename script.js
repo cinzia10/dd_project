@@ -43,7 +43,7 @@ function displayInfo(array) {
     const container = document.getElementById("info-container");
     //// TITOLO
     const title = document.createElement('h1');
-    const textTitle = document.createTextNode('Name: ' + array.name);
+    const textTitle = document.createTextNode('Name: ' + array.name.replace('-', ' '));
     title.appendChild(textTitle);
     //// IMMAGINE
     const img = document.createElement('img');
