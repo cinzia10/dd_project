@@ -33,7 +33,7 @@ function scrollBackTop() {
 function search() {
   const input = document.getElementById('search-input');
   console.log('parola cercata', input.value)
-  const searchWords = input.value.trim();
+  const searchWords = input.value.trim().toLowerCase();
   const term = searchWords.replaceAll(' ', '-');
   const allTerm = [];
   for (const element of tempArray) {
