@@ -49,6 +49,7 @@ nav {
   width: 100%;
   margin-right: 80px;
   z-index: 2;
+  position: relative;
 }
 
 input {
@@ -86,6 +87,31 @@ input:focus {
 
 .search:hover {
   cursor: pointer;
+}
+
+.search-result{
+    position: absolute;
+    width: 240px;
+    height: fit-content;
+    background-color: rgb(255, 247, 212);
+    top: 100%;
+    right: -3px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* label{display: none;} */
+
+
+
+
+.search-result-button{
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 4px;
 }
 
 .nav-span {

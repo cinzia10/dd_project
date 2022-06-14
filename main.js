@@ -95,3 +95,34 @@ function requestData() {
 }
 
 requestData();
+
+function checkRacesText(){
+    let smallArrayOfMonster = []
+    const inputText = document.getElementById('search-input').value.toLowerCase()
+    console.log(inputText);
+    document.getElementById('search-result').innerHTML = ''
+    if(inputText === '') return
+    for(let i = 0; i < tempArray.length; i++){
+        // racestTextContent è una variabile contenuta in racestTextContent.js. E' un array con tutto il testo delle razze
+        const raceText = racestTextContent[i].toLowerCase()
+        // Se la parola cercata è inclusa da qualche parte nel testo del mostro, aggiungo l'attuale mostro all'array da mostrare  
+        if(raceText.includes(inputText))  smallArrayOfMonster.push(tempArray[i])
+    }
+    console.log(smallArrayOfMonster);
+    showSelectedMonsters(smallArrayOfMonster)
+}
+
+function showSelectedMonsters(smallArray){
+    const searchResultDiv = document.getElementById('search-result')
+    for (const creature of smallArray) {
+        const button = document.createElement('button')
+        button.className = 'search-result-button'
+        button.innerHTML = creature.name
+        button.onclick = () =>goToPage(creature.index)
+        searchResultDiv.append(button)
+    }
+}
+
+
+
+
